@@ -1,0 +1,30 @@
+var ss = SpreadsheetApp.openById('1Xtf6d9DH86fgtUyL5lHyxDYgskcbtFWvep9I3yCxPqg'); 
+var sheet = ss.getSheetByName('Sheet1');
+var timezone = "Asia/Kolkata";
+
+function doGet(e){
+  if (!e.parameter.name) {
+    return ContentService.createTextOutput("Missing parameters");
+  }
+
+  var Curr_Date = new Date();
+  var Curr_Time = Utilities.formatDate(Curr_Date, timezone, 'HH:mm:ss');
+
+  var name = stripQuotes(e.parameter.name);
+  var roll = stripQuotes(e.parameter.roll);
+  var dept = stripQuotes(e.parameter.dept);
+
+  var nextRow = sheet.getLastRow() + 1;
+  sheet.getRange("A" + nextRow).setValue(Curr_Date);
+  sheet.getRange("B" + nextRow).setValue(Curr_Time);
+  sheet.getRange("C" + nextRow).setValue(name);
+  sheet.getRange("D" + nextRow).setValue(roll);
+  sheet.getRange("E" + nextRow).setValue(dept);
+
+  return ContentService.createTextOutput("Data stored successfully");
+}
+
+function stripQuotes(value) {
+  if (!value) return "";
+  return value.toString().replace(/^["']|['"]$/g, "");
+}
