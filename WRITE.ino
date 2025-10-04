@@ -13,10 +13,10 @@ MFRC522::StatusCode status;
 byte bufferLen = 18;
 byte readBlockData[18];
 
-// Example data (must be 16 bytes each)
-byte nameData[16]  = {"gokulan"};        // Block 4
-byte rollData[16]  = {"005"};        // Block 5
-byte deptData[16]  = {"EEE"};          // Block 6
+// Example data (must be 16 bytes each) add your data to write in RFID card
+byte nameData[16]  = {"xyz"};        // Block 4
+byte rollData[16]  = {"009"};        // Block 5
+byte deptData[16]  = {"dept"};          // Block 6
 
 void setup() {
   Serial.begin(9600);
