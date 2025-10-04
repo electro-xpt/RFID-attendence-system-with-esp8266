@@ -1,4 +1,4 @@
-var ss = SpreadsheetApp.openById('1Xtf6d9DH86fgtUyL5lHyxDYgskcbtFWvep9I3yCxPqg'); 
+var ss = SpreadsheetApp.openById('<paste your google sheet web page url>'); 
 var sheet = ss.getSheetByName('Sheet1');
 var timezone = "Asia/Kolkata";
 
@@ -28,3 +28,4 @@ function stripQuotes(value) {
   if (!value) return "";
   return value.toString().replace(/^["']|['"]$/g, "");
 }
+
