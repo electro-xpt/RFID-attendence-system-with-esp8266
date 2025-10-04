@@ -7,11 +7,11 @@
 #include <LiquidCrystal_I2C.h>
 
 // ---------- WiFi ----------
-const char* ssid     = "opensource";
-const char* password = "kas12345";
+const char* ssid     = "<wifi name>"; //add your wifi name
+const char* password = "<password>";  // add your wifi password
 
 // ---------- Google Apps Script ----------
-String GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwHYbP7RWrcushk6Ea0X7q3dCLQ0JMhDvG9mN7lJp5WdavRT5-LTHWyBwKb-MlPja8/exec";
+String GOOGLE_SCRIPT_URL = "<script url>";  // paste your google script url here
 
 // ---------- RFID ----------
 #define RST_PIN D3  
